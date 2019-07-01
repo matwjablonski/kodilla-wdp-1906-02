@@ -27,8 +27,26 @@
     }
 
     .buttons {
-      display: flex;
-      justify-content: space-between;
+      visibility: hidden;
+    }
+  }
+
+  &:hover {
+    .photo {
+      .buttons {
+        visibility: visible;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .actions {
+      .price {
+        .btn-main-small {
+          color: $text-color;
+          background-color: #ffffff;
+          border: 1px solid $text-color;
+        }
+      }
     }
   }
 

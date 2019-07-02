@@ -171,6 +171,13 @@ header {
         display: flex;
         align-items: center;
         position: relative;
+        &:hover {
+          background-color: $text-color;
+          color: #ffffff;
+          select {
+            color: #ffffff;
+          }
+        }
 
         i:first-child {
           color: $primary;

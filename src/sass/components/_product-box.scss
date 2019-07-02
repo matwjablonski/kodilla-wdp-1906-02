@@ -79,4 +79,9 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .btn-outline.active {
+    background-color: #000;
+    color: $primary;
+  }
 }

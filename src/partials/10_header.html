@@ -55,11 +55,17 @@
         <div class="col">
           <form action="" class="search-form">
             <div class="category">
-              <i class="fas fa-list-ul"></i>
-              <select name="" id="">
-                <option value="">Select a category</option>
-              </select>
-              <i class="fas fa-caret-down"></i>
+              <ul class="category-menu">
+                <li>
+                  Select a category <i class="fas fa-list-ul"></i>
+                  <ul class="category-menu-dropdown">
+                    <li class="category-menu-item">Option 1</li>
+                    <li class="category-menu-item">Option 2</li>
+                    <li class="category-menu-item">Option 3</li>
+                  </ul>
+                  <i class="fas fa-caret-down"></i>
+                </li>
+              </ul>
             </div>
             <div class="search-field">
               <input placeholder="Search products..." type="text" />

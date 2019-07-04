@@ -16,6 +16,10 @@
       justify-content: center;
       align-items: center;
       border: 1px solid #b6b6b6;
+
+      &:hover {
+        @extend %animate-params;
+      }
     }
 
     &::before {
@@ -59,5 +63,8 @@
     .content {
       color: $primary;
     }
+  }
+  &:hover {
+    @extend %animate-params;
   }
 }

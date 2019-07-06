@@ -1,3 +1,15 @@
+.features-col {
+  @include make-col-ready;
+  @include media-breakpoint-up(xs) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
+  }
+}
 .feature-box {
   border: 1px solid #b6b6b6;
   text-align: center;

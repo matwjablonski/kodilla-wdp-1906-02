@@ -53,16 +53,7 @@ a {
     }
   }
 
-  &.active {
-    i {
-      background-color: $primary;
-      color: #ffffff;
-      border-color: $primary;
-    }
-    .content {
-      color: $primary;
-    }
-  }
+  &.active,
   &:hover {
     i {
       background-color: $primary;

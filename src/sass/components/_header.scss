@@ -229,3 +229,15 @@ header {
     }
   }
 }
+
+.mobile-hide {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.desktop-hide {
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}

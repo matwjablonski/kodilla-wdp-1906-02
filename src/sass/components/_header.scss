@@ -212,11 +212,11 @@ header {
           display: block;
           padding: 10px;
           transition: all 250ms ease;
-        }
 
-        .category-menu-item:hover {
-          background-color: $primary;
-          color: #fff;
+          &:hover {
+            background-color: $primary;
+            color: #fff;
+          }
         }
 
         .category-menu-item:nth-child(2) {

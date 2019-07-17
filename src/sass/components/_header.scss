@@ -1,6 +1,9 @@
 header {
   .top-bar {
     background-color: $header-topbar-bg;
+    @include media-breakpoint-down(sm) {
+      position: relative;
+    }
 
     ul {
       list-style: none;
@@ -16,6 +19,7 @@ header {
           font-size: 13px;
 
           &:hover {
+            @extend %animate-params;
             color: $primary;
             text-decoration: none;
           }
@@ -25,6 +29,9 @@ header {
 
     .text-left ul li {
       margin-right: 1.5rem;
+      @include media-breakpoint-down(sm) {
+        margin-right: 10px;
+      }
 
       i {
         margin-left: 5px;
@@ -48,7 +55,18 @@ header {
     }
 
     .phone-number {
+      @include media-breakpoint-down(sm) {
+        order: 2;
+      }
       p {
+        @include media-breakpoint-down(sm) {
+          font-size: 12px;
+          margin: 10px -10px 0 15px;
+        }
+        @include media-breakpoint-down(xs) {
+          font-size: 10px;
+          margin: 10px -10px 0 10px;
+        }
         margin: 0;
         font-size: 17px;
         line-height: 42px;
@@ -56,6 +74,12 @@ header {
         font-weight: 500;
 
         i {
+          @include media-breakpoint-down(sm) {
+            font-size: 20px;
+          }
+          @include media-breakpoint-down(xs) {
+            font-size: 15px;
+          }
           font-size: 32px;
           color: $primary;
           vertical-align: middle;
@@ -66,6 +90,10 @@ header {
     }
 
     .cart {
+      @include media-breakpoint-down(sm) {
+        order: 3;
+        text-align: center !important;
+      }
       .cart-box {
         display: inline-block;
         position: relative;
@@ -104,6 +132,7 @@ header {
 
         &:hover {
           .cart-icon {
+            @extend %animate-params;
             background-color: lighten($primary, 10%);
           }
         }
@@ -147,6 +176,7 @@ header {
 
             &:hover,
             &.active {
+              @extend %animate-params;
               background-color: $primary;
               color: #ffffff;
               border-color: $primary;
@@ -170,6 +200,14 @@ header {
         border-right: 1px solid $form-border-color;
         position: relative;
         transition: all 250ms ease;
+        
+        &:hover {
+          background-color: $text-color;
+          color: #ffffff;
+          select {
+            color: #ffffff;
+          }
+        }
 
         i:first-child {
           color: $primary;
@@ -264,5 +302,17 @@ header {
         }
       }
     }
+  }
+}
+
+.mobile-hide {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.desktop-hide {
+  @include media-breakpoint-up(md) {
+    display: none;
   }
 }

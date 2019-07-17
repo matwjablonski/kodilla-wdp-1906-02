@@ -2,11 +2,11 @@
 
 ## Opis projektu
 
-DO UZUPEŁNIENIA
+Projekt grupowy w ramach bootcampu Web Developer Plus.
 
 ## Demo
 
-DO UZUPEŁNIENIA
+https://kodilla-wdp-1906-02.netlify.com
 
 ## Inicjacja projektu
 

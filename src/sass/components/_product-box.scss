@@ -83,5 +83,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .price {
+      .old-price {
+        text-decoration: line-through;
+      }
+    }
   }
 }

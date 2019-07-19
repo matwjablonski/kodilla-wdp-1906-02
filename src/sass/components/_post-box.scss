@@ -1,3 +1,9 @@
+@for $i from 1 through 3 {
+  .blog-photo-#{$i} {
+    background-image: url("/images/blog#{$i}.jpg");
+  }
+}
+
 a {
   display: block;
   color: inherit;

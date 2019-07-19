@@ -1,3 +1,8 @@
+@for $i from 1 through 8 {
+  .bed-photo-#{$i} {
+    background-image: url("/images/bed#{$i}.jpg");
+  }
+}
 .product-box {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
@@ -8,7 +13,7 @@
     padding: 80% 10px 0 10px;
     background: {
       color: #f4f5f7;
-      size: contain;
+      size: cover;
       position: center;
       repeat: no-repeat;
     }

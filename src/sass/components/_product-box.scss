@@ -32,8 +32,24 @@
     }
 
     .buttons {
+      visibility: hidden;
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  &:hover {
+    .photo {
+      .buttons {
+        visibility: visible;
+      }
+    }
+    .actions {
+      .btn-main-small {
+        color: $text-color;
+        background-color: #ffffff;
+        border: 1px solid $text-color;
+      }
     }
   }
 

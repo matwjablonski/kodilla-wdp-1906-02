@@ -4,6 +4,25 @@
   }
 }
 
+.product-col {
+  @include make-col-ready;
+  @include media-breakpoint-down(sm) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(4);
+  }
+  @include media-breakpoint-up(xl) {
+    @include make-col(3);
+  }
+}
+
 .product-box {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
@@ -35,25 +54,6 @@
     .buttons {
       display: flex;
       justify-content: space-between;
-    }
-  }
-
-  .product-col {
-    @include make-col-ready;
-    @include media-breakpoint-down(sm) {
-      @include make-col(12);
-    }
-    @include media-breakpoint-up(sm) {
-      @include make-col(6);
-    }
-    @include media-breakpoint-up(md) {
-      @include make-col(6);
-    }
-    @include media-breakpoint-up(lg) {
-      @include make-col(4);
-    }
-    @include media-breakpoint-up(xl) {
-      @include make-col(3);
     }
   }
 

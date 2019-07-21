@@ -17,6 +17,12 @@
   }
 }
 
+@for $i from 1 through 8 {
+  .bed-photo-#{$i} {
+    background-image: url("/images/bed#{$i}.jpg");
+  }
+}
+
 .product-box {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;

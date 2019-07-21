@@ -119,7 +119,7 @@ header {
       height: 84px;
       @include media-breakpoint-down(sm) {
         height: auto;
-        align-items: flex-start !important;
+        // align-items: flex-start !important;
       }
     }
 
@@ -218,9 +218,13 @@ header {
       display: inline-flex;
       height: 45px;
       color: $text-color;
-      @include media-breakpoint-down(sm) {
-        padding-left: 2px;
+      @include media-breakpoint-down(xs) {
+        padding-left: 0;
         font-size: 10px;
+        justify-content: flex-start;
+        & > select {
+          font-size: 10px !important;
+        }
       }
 
       .category {
@@ -254,8 +258,8 @@ header {
           border: 0;
           background-color: transparent;
           outline: none;
-          padding: 5px 10px 5px 15px;
-          font-size: 14px;
+          padding: 5px 25px 5px 25px;
+          // font-size: 14px;
           position: relative;
           z-index: 1;
         }
@@ -265,7 +269,11 @@ header {
         display: flex;
         align-items: center;
         position: relative;
-
+        @include media-breakpoint-down(xs) {
+          & > input {
+            font-size: 10px !important;
+          }
+        }
         input {
           border: 0;
           padding-left: 10px;

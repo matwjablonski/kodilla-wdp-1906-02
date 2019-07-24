@@ -144,8 +144,39 @@ header {
     box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
     background-color: #ffffff;
 
+    .container {
+      padding: 10px;
+      line-height: 1;
+    }
+
     .container > .row {
       height: 84px;
+      justify-content: center;
+
+      @include media-breakpoint-down(md) {
+        flex-wrap: wrap;
+      }
+
+      @include media-breakpoint-up(md) {
+        flex-wrap: wrap-reverse;
+      }
+
+      @include media-breakpoint-up(lg) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .menu-col {
+      @include make-col-ready;
+      @include media-breakpoint-down(md) {
+        @include make-col(6);
+      }
+      @include media-breakpoint-up(md) {
+        @include make-col(12);
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+      }
     }
 
     .menu {
@@ -156,11 +187,24 @@ header {
         margin: 0;
         padding: 0;
         display: flex;
+        @include media-breakpoint-down(md) {
+          flex-direction: column;
+          width: 100%;
+          background-color: white;
+          z-index: 2;
+        }
 
         li {
           list-style: none;
           display: flex;
           align-items: stretch;
+          @include media-breakpoint-down(md) {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 15px;
+            text-align: left;
+            display: block;
+          }
 
           a {
             color: $text-color;
@@ -186,6 +230,15 @@ header {
               border-color: $text-color;
             }
           }
+        }
+      }
+      .ico-menu {
+        @include media-breakpoint-down(sm) {
+          display: inline-block;
+          width: 48px;
+          height: 48px;
+          background: url("/images/ico-menu.png") no-repeat 100% center;
+          background-color: #ffffff;
         }
       }
     }

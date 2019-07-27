@@ -156,6 +156,12 @@ header {
       }
     }
 
+    #nav-menu {
+      &.active {
+        display: block !important;
+      }
+    }
+
     ul {
       margin: 0;
       padding: 0;
@@ -164,6 +170,7 @@ header {
         flex-direction: column;
         width: 100%;
         display: none;
+
         li {
           width: 100%;
           height: auto;

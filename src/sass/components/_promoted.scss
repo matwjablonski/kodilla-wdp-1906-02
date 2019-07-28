@@ -1,0 +1,117 @@
+.hot-deals {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5px 15px;
+  li {
+    z-index: 5;
+    display: inline-block;
+  }
+}
+
+.dots {
+  ul {
+    margin: 0;
+    padding: 0 0 0 1rem;
+    list-style: none;
+    // background-color: #ffffff;
+    // transform: translateY(15px);
+
+    li {
+      display: inline-block;
+      margin-left: 0.5rem;
+
+      a {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 6px;
+        background-color: #e1e1e1;
+
+        &.active,
+        &:hover {
+          @extend %animate-params;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.product-box {
+  .centphoto {
+    padding: 25% 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 555px;
+  }
+
+  .photo {
+    .textline {
+      position: absolute;
+      top: 30%;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 40px 30px;
+      color: #ffffff;
+      width: 100%;
+      text-align: center;
+    }
+    .timer {
+      background-color: #292929;
+      border-radius: 50%;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 5px 10px 5px;
+      max-width: 65px;
+      margin-bottom: 5px;
+    }
+
+    .addbttn {
+      visibility: hidden;
+      position: absolute;
+      top: 50%;
+      left: 35%;
+    }
+
+    .shopbttn {
+      visibility: visible;
+      position: absolute;
+      background-color: #ffffff !important;
+      top: 60%;
+      left: 45%;
+    }
+
+    .downbttn {
+      visibility: visible;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      // align-items: flex-end !important;
+      flex-grow: 1;
+
+      .btn-outline-promoted {
+        @extend .btn-outline;
+        border-style: none;
+        color: #ffffff;
+        text-align: center;
+        display: block;
+        width: 50%;
+        background-color: #000000;
+        align-items: flex-end !important;
+        margin: 0;
+        padding: 10px 0;
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+
+    &:hover {
+      .photo {
+        .addbttn {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

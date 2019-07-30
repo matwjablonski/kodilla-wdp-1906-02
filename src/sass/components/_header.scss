@@ -145,90 +145,93 @@ header {
     background-color: #ffffff;
 
     .container {
-      padding: 10px;
-      line-height: 1;
-    }
-
-    .container > .row {
-      height: 84px;
-      justify-content: center;
-
       @include media-breakpoint-down(md) {
-        flex-wrap: wrap;
-      }
-
-      @include media-breakpoint-up(md) {
-        flex-wrap: wrap-reverse;
-      }
-
-      @include media-breakpoint-up(lg) {
-        flex-wrap: wrap;
+        @include media-breakpoint-up(sm) {
+          flex-direction: row-reverse !important;
+          justify-content: center;
+        }
       }
     }
 
-    .menu-col {
-      @include make-col-ready;
+    [class*="col-"] {
       @include media-breakpoint-down(md) {
-        @include make-col(6);
-      }
-      @include media-breakpoint-up(md) {
-        @include make-col(12);
-      }
-      @include media-breakpoint-up(lg) {
-        @include make-col(6);
+        padding: 0;
+        margin: 0;
       }
     }
 
     .menu {
       display: flex;
       align-self: stretch;
+      width: auto;
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        background-color: #ffffff;
+      }
+    }
 
-      ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        @include media-breakpoint-down(md) {
-          flex-direction: column;
-          width: 100%;
-          background-color: white;
-          z-index: 2;
-        }
+    .ico-bar {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      @include media-breakpoint-up(sm) {
+        display: none;
+        height: 0;
+      }
+
+      & > a {
+        display: inline-block;
+        font-size: 20px;
+      }
+    }
+
+    #nav-menu {
+      &.active {
+        display: block !important;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        width: 100%;
+        display: none;
 
         li {
-          list-style: none;
+          width: 100%;
+          height: auto;
+          border-bottom: 1px solid;
+        }
+      }
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+
+        a {
+          color: $text-color;
+          text-transform: uppercase;
+          font-size: 12px;
+          padding: 1rem;
+          text-decoration: none;
           display: flex;
-          align-items: stretch;
-          @include media-breakpoint-down(md) {
-            box-sizing: border-box;
-            width: 100%;
-            padding: 15px;
-            text-align: left;
-            display: block;
+          align-items: center;
+          font-weight: 500;
+          letter-spacing: 1px;
+
+          &:hover,
+          &.active {
+            background-color: $primary;
+            color: #ffffff;
+            border-color: $primary;
           }
 
-          a {
-            color: $text-color;
-            text-transform: uppercase;
-            font-size: 12px;
-            padding: 1rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            border-top: 4px solid #ffffff;
-            font-weight: 500;
-            letter-spacing: 1px;
-
-            &:hover,
-            &.active {
-              @extend %animate-params;
-              background-color: $primary;
-              color: #ffffff;
-              border-color: $primary;
-            }
-
-            &.active {
-              border-color: $text-color;
-            }
+          &.active {
+            border-color: $text-color;
           }
         }
       }
@@ -248,6 +251,14 @@ header {
       display: inline-flex;
       height: 45px;
       color: $text-color;
+      @include media-breakpoint-down(md) {
+        padding-left: 0;
+        font-size: 12px;
+        justify-content: flex-start;
+        select {
+          font-size: 10px;
+        }
+      }
 
       .category {
         border-right: 1px solid $form-border-color;
@@ -277,58 +288,17 @@ header {
           top: 13px;
         }
 
-        .category-menu {
-          padding: 10px 30px 5px 35px;
-          font-size: 14px;
-          list-style: none;
-          margin: 0;
-        }
-
-        .category-menu-dropdown {
-          width: 101%;
-          visibility: collapse;
-          text-align: center;
-          position: absolute;
-          left: -1px;
-          top: 100%;
-          background-color: #fff;
-          padding: 0;
-          border: 1px solid $form-border-color;
-          z-index: 999;
-          opacity: 0;
-          transition: all 250ms ease;
-        }
-
-        .category-menu-item {
-          display: block;
-          padding: 10px;
-          transition: all 250ms ease;
-
-          &:hover {
-            background-color: $primary;
-            color: #fff;
+        select {
+          -webkit-appearance: none;
+          border: 0;
+          background-color: transparent;
+          outline: none;
+          padding: 5px 35px 5px 35px;
+          position: relative;
+          z-index: 1;
+          @include media-breakpoint-down(md) {
+            font-size: 12px;
           }
-        }
-
-        .category-menu-item:nth-child(2) {
-          border-top: 1px solid $form-border-color;
-          border-bottom: 1px solid $form-border-color;
-        }
-
-        &:hover {
-          cursor: pointer;
-          background-color: $primary;
-        }
-
-        &:hover i {
-          color: #fff;
-        }
-
-        &:hover .category-menu-dropdown {
-          display: block;
-          opacity: 1;
-          visibility: visible;
-          cursor: pointer;
         }
       }
 
@@ -336,13 +306,22 @@ header {
         display: flex;
         align-items: center;
         position: relative;
+        @include media-breakpoint-down(md) {
+          font-size: 12px;
+        }
 
         input {
           border: 0;
           padding-left: 10px;
-          font-size: 14px;
           outline: none;
-
+          @include media-breakpoint-down(md) {
+            font-size: 12px;
+            padding-left: 5px;
+            width: 75%;
+          }
+          @include media-breakpoint-down(sm) {
+            width: 75%;
+          }
           &::placeholder {
             color: $text-color;
           }

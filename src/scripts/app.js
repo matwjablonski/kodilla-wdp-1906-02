@@ -10,3 +10,4 @@ var button = document.querySelector('#nav-toggle');
 button.addEventListener('click', function (event) {
   document.getElementById('nav-menu').classList.toggle('active');
 });
+

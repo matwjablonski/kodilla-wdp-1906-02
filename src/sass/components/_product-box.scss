@@ -1,3 +1,8 @@
+@for $i from 1 through 8 {
+  .bed-photo-#{$i} {
+    background-image: url("/images/bed#{$i}.jpg");
+  }
+}
 .product-box {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
@@ -8,7 +13,7 @@
     padding: 80% 10px 0 10px;
     background: {
       color: #f4f5f7;
-      size: contain;
+      size: cover;
       position: center;
       repeat: no-repeat;
     }
@@ -27,8 +32,24 @@
     }
 
     .buttons {
+      visibility: hidden;
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  &:hover {
+    .photo {
+      .buttons {
+        visibility: visible;
+      }
+    }
+    .actions {
+      .btn-main-small {
+        color: $text-color;
+        background-color: #ffffff;
+        border: 1px solid $text-color;
+      }
     }
   }
 
@@ -78,5 +99,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .price {
+      .old-price {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.product-col {
+  @include make-col-ready;
+  @include media-breakpoint-down(sm) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(4);
+  }
+  @include media-breakpoint-up(xl) {
+    @include make-col(3);
   }
 }

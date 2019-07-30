@@ -1,3 +1,22 @@
+@for $i from 1 through 3 {
+  .blog-photo-#{$i} {
+    background-image: url("/images/blog#{$i}.jpg");
+  }
+}
+
+a {
+  display: block;
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+    .details {
+      color: #000;
+    }
+    .btn-main {
+      background-color: $primary;
+    }
+  }
+}
 .post-box {
   margin-bottom: 2rem;
 
@@ -33,7 +52,6 @@
     padding: 25px;
 
     h5 {
-      color: $primary;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -50,5 +68,18 @@
       text-align: center;
       padding-top: 30px;
     }
+  }
+}
+
+.latest-blog {
+  @include make-col-ready;
+  @include media-breakpoint-up(xs) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
   }
 }

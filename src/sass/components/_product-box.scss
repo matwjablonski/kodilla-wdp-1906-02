@@ -143,4 +143,9 @@
   @include media-breakpoint-up(xl) {
     @include make-col(3);
   }
+
+  .btn-outline.active {
+    background-color: #000;
+    color: $primary;
+  }
 }
